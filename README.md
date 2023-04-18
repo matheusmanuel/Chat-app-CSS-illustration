@@ -29,7 +29,7 @@ Seus usuários devem ser capazes de:
 
 ### Links
 
-- URL da solução: [Link da solução](https://www.frontendmentor.io/solutions/interactive-rating-component-WCpsS9Aqdz)
+- URL da solução: [Link da solução](https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY/hub)
 - URL do site ao vivo: [demonstração](https://matheusmanuel.github.io/Interactive-rating-component/)
 
 
