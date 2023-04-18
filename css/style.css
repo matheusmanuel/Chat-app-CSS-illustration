@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+:root {
+  --Pale-Violet: hsl(276, 100%, 81%);
+  --Moderate-Violet: hsl(276, 55%, 52%);
+  --Desaturated-Dark-Violet: hsl(271, 15%, 43%);
+  --Grayish-Blue: hsl(206, 6%, 79%);
+  --Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%);
+  --Dark-Grayish-Violet: hsl(270, 7%, 64%);
+  --White: hsl(0, 0%, 100%);
+  --Light-Grayish-Violet: hsl(270, 20%, 96%);
+  --Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%);
+  --Very-Light-Magenta: hsl(289, 100%, 72%);
+  --Light-Magenta: hsl(293, 100%, 63%);
+  --Light-Violet: hsl(264, 100%, 61%);
+  --gradient-blue-to-violet: linear-gradient(
+    to left,
+    var(--Light-Magenta),
+    var(--Light-Violet)
+  );
+}
+body {
+  font-size: 16px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.circle {
+  width: 400px;
+  height: 780px;
+  border-radius: 200px;
+  position: fixed;
+  z-index: -999;
+}
+.circle.gradient {
+  top: -200px;
+  left: -50px;
+  background-image: linear-gradient(
+    -150deg,
+    var(--Light-Magenta) 10%,
+    var(--Light-Violet)
+  );
+}
+.circle.left {
+  top: 150px;
+  right: -140px;
+  background: var(--Light-Grayish-Violet);
+}
+main {
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+}
+.main-screen {
+  margin-top: 20px;
+}
+.main-screen .screen {
+  position: relative;
+  width: 280px;
+  background-color: var(--Light-Grayish-Violet);
+  border-radius: 30px;
+  border: 12px solid white;
+  /* O primeiro valor da propriedade box shaddow
+       é o eixo X  ou seja se a sombra ela vai pra
+       direita ou pra esquerda se colocar um valor negativo
+       por exemplo se eu colocar ai -10px ela vai pra esquerda
+       o terceiro valor é o eixo Y ou seja se a sombra ela vai pra 
+       cima ou pra baixo se eu colocar um valor negativo a sombra vai cima
+       o terceiro é o blur alguns chama isso de esfumaçã ou borrão esse efeito causa 
+       um desfoque que torna a sombra maior e mais leve então quanto 
+       maior for o valor mais leve e transparente é a sombra.
+    */
+  box-shadow: 3px 15px 90px 0px #00000017;
+}
+.main-screen .rounded {
+  background-color: white;
+  height: 25px;
+  width: 60%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 99;
+}
+.main-screen .screen .header {
+  display: flex;
+  align-items: center;
+  background-image: var(--gradient-blue-to-violet);
+  position: relative;
+  padding: 36px 10px 14px;
+  border-radius: 1pc;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.062);
+}
+.main-screen .arrow-left {
+  color: var(--White);
+  cursor: pointer;
+}
+.main-screen .screen .user {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-left: 5px;
+}
+.main-screen .screen .img-user img {
+  width: 40px;
+  border-radius: 100%;
+  border: 2px solid white;
+  padding: 2px;
+}
+.main-screen .screen .text-user {
+  color: var(--White);
+  margin-left: 10px;
+}
+.main-screen .screen .text-user .name-user {
+  font-weight: 600;
+  font-size: 14px;
+}
+.main-screen .screen .text-user .state {
+  font-size: 12px;
+  color: var(--Grayish-Blue);
+}
+.main-screen .screen .bolinhas {
+  margin-left: auto;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.main-screen .screen .bolinhas span {
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: var(--Light-Grayish-Violet);
+  border-radius: 100%;
+  margin: 2px 0;
+}
+.messages {
+  padding: 10px;
+  height: 370px;
+  overflow-y: scroll;
+}
+.messages::-webkit-scrollbar {
+  width: 9px;
+}
+.messages::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.137);
+  border-radius: 10px;
+}
+.messages::-webkit-scrollbar-thumb:active {
+  background-color: var(--Desaturated-Dark-Violet);
+}
+.messages .message-item {
+  font-size: 12px;
+  margin: 10px 0;
+  padding: 6px;
+  font-weight: 400;
+}
+.messages .message-item.left {
+  max-width: 70%;
+  width: fit-content;
+  border-radius: 13px 13px 13px 3px;
+  background-color: hsl(272, 41%, 93%);
+  color: var(--Moderate-Violet);
+}
+.messages .message-item:nth-of-type(1) {
+  margin: 0;
+}
+.message-item.right {
+  max-width: 80%;
+  width: fit-content;
+  margin-left: auto;
+  background-color: var(--White);
+  border-radius: 13px 13px 3px 13px;
+  color: rgba(0, 0, 0, 0.603);
+}
+.message-item.right:last-child{
+  /* margin: 0; */
+}
+.message-item.images {
+  display: flex;
+  padding: 0;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+.message-item.images img {
+  width: 40px;
+  border-radius: 10px;
+  margin: 0 2px;
+}
+.message-item.escolha {
+  cursor: pointer;
+  color: var(--Light-Grayish-Violet) !important;
+  background-image: linear-gradient(
+    to right,
+    var(--Light-Magenta) 20%,
+    var(--Light-Violet)
+  );
+  display: flex;
+  align-items: center;
+  max-width: 80% !important;
+  width: 80% !important;
+  /* A !importantregra em CSS é usada para adicionar mais importância a uma propriedade/valor do que o normal.
+        Na verdade, se você usar a 
+    !importantregra, ela substituirá TODAS as regras de estilo anteriores para essa propriedade específica nesse elemento! */
+  padding: 10px;
+}
+.message-item.escolha .price {
+  font-size: 15px;
+  font-weight: bolder;
+  margin-left: auto;
+}
+.message-item.escolha .radio {
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.message-item.escolha .check-circle {
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: block;
+}
+.message-item.escolha .radio input[type="radio"] {
+  display: none;
+}
+
+.message-item.escolha .radio input:checked ~ .check-circle::after {
+  content: "";
+  display: block;
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* main text */
+.main-text {
+  padding-left: 150px;
+}
+.main-text h3 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: var(--Very-Dark-Desaturated-Violet);
+}
+.main-text p {
+  color: var(--Dark-Grayish-Violet);
+  font-weight: lighter;
+}
+.main-screen .input-message {
+  position: relative;
+  padding: 10px;
+}
+.main-screen .input-message input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 15px 60px 15px 15px;
+  color: rgba(0, 0, 0, 0.705);
+  border-radius: 30px;
+}
+.main-screen .input-message input::placeholder {
+  color: rgba(0, 0, 0, 0.705);
+}
+.main-screen .input-message i {
+  position: absolute;
+  top: 14px;
+  background-color: black;
+  right: 14px;
+  border-radius: 100%;
+  font-size: 17px;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+  .main-text {
+    padding: 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+  body{
+    height: 100%;
+  }
+}
